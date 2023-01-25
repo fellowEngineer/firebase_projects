@@ -1,5 +1,52 @@
 <%- include("layouts/header") -%> 
 
+<section id="mainframe">
+    <form action="/signup" method="post">
+        <div class="mb-3 pkt">
+            <label for="username" class="form-label">Username</label> <br>
+            <input type="text" name="username" class="form-control" id="username" autocomplete="off" placeholder="Robert Downy jn.">
+        </div>
+
+        <div class="mb-3 pkt">
+            <label for="inputEmail1" class="form-label">Email address</label>
+            <input type="email" name="inputEmail" class="form-control" id="inputEmail" aria-describedby="emailHelp" autocomplete="off" placeholder="example@example.com" required>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3 pkt">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" name="inputPassword" class="form-control" id="inputPassword" required>
+        </div>
+
+        <div class="mb-3 pkt">
+            <label for="inputMobileNumber" class="form-label">Mobile</label>
+            <input type="text" name="mobileNumber" class="form-control" id="inputMobileNumber" aria-describedby="mobileHelp" autocomplete="off" placeholder="9876543210">
+            <div id="mobileHelp" class="form-text">We'll never share your Mobile with anyone else.</div>
+        </div>
+
+        <div class="mb-3 pkt">
+            <label for="inputGender" class="form-label">Gender</label><br>
+            <input type="radio" name="gender" class="" id="inputGenderMale" value="male" checked>
+            <label for="inputGenderMale">Male</label>
+            <input type="radio" name="gender" class="" id="inputGenderFemale" value="female">
+            <label for="inputGenderFemale">Female</label>
+            <input type="radio" name="gender" class="" id="inputGenderOthers" value="others">
+            <label for="inputGenderOthers">Others</label><br>
+        </div>
+
+        <!-- <div class="mb-3 form-check pkt">
+            <input type="checkbox" class="form-check-input" id="exampleCheck">
+            <label class="form-check-label" for="exampleCheck">Check me out</label>
+        </div> -->
+
+        <div class="mb-3 pkt">
+            <label for="nickname" class="form-label">Nickname</label> <br>
+            <input type="text" name="nickname" class="form-control" id="nickname" placeholder="King.">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
 
 
     
