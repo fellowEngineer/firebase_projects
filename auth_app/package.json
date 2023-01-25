@@ -1,0 +1,24 @@
+{
+  "name": "auth_app",
+  "version": "1.0.0",
+  "description": "Authentication with firebase auth",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fellowEngineer/firebase_projects.git#main"
+  },
+  "keywords": [
+    "auth_app",
+    "firebase"
+  ],
+  "author": "fellowengineer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fellowEngineer/firebase_projects/issues"
+  },
+  "homepage": "https://github.com/fellowEngineer/firebase_projects/tree/main#readme"
+}
