@@ -1,6 +1,7 @@
 const express = require ("express");
 const bodyParser =  require ("body-parser");
-const db = require ("./db_config");
+const db = require ("./js_assets/db_config");
+// const db_data = require("./js_assets/getData");
 
 
 
@@ -22,8 +23,7 @@ app.get("/", (req, res) => {
 
 app.get("/signin", (req, res) => {
     res.render("signin");
-})
-app.post("/signin", async (req, res) => {
+}).post("/signin", async (req, res) => {
     const user = {
         email: req.body.inputEmail,
         password: req.body.inputPassword,
@@ -64,8 +64,7 @@ app.post("/signin", async (req, res) => {
 
 app.get("/signup", (req, res) => {
     res.render("signup");
-})
-app.post("/signup", async (req, res) => {
+}).post("/signup", async (req, res) => {
     let u_data = req.body;
     const user = {
         username: u_data.username,
@@ -83,9 +82,7 @@ app.post("/signup", async (req, res) => {
     }
 
     try{
-        // console.log(user);
-        const response = await db.collection("users").doc(user.email).set(user);
-        console.log(response);
+        await db.collection("users").doc(user.email).set(user);
     }
     catch (e){
         console.log("error form /signin --> " + e);
@@ -96,27 +93,105 @@ app.post("/signup", async (req, res) => {
 
 
 
-app.get("/update", (req, res) => {
+app.get("/update",  (req, res) => {
     res.render("update");
-})
-app.post("/update", (req, res) => {
-    res.render("update");
+}).post("/update", async (req, res) => {
+    let u_data = req.body;
+    const user = {
+        username: u_data.username,
+        email: u_data.inputEmail,
+        password: u_data.inputPassword,
+        mobile: u_data.mobileNumber,
+        gender: u_data.gender,
+        nickname: u_data.nickname
+    };
+
+    if(user.email == undefined)
+    {
+        console.log("email is not provided");
+        res.render("update");
+    }
+
+    try{
+        if((user.email != undefined) && (user.password != undefined))
+        {
+            const uRef = db.collection("users").doc(user.email);
+            const response = await uRef.get();
+            const uData = response.data();
+            // console.log(uData);
+
+            if((uData.email == user.email) && (uData.password == user.password))
+            {
+                uRef.update(user)
+                res.render("user_data", {uData: uData});
+            }
+            else
+            {
+                res.render("update");
+            }
+        }
+        else
+        {
+            res.render("update");
+        }
+
+    }
+    catch(e){
+        console.log("error from /signin --> " + e);
+        res.render("update");
+    }
 })
 
 
 
 app.get("/delete", (req, res) => {
     res.render("delete");
-})
-app.post("/delete", (req, res) => {
-    res.render("delete");
+}).post("/delete", async (req, res) => {
+
+    const user = {
+        email: req.body.inputEmail,
+        password: req.body.inputPassword,
+    };
+    // console.log(user);
+
+    try{
+
+        if((user.email != undefined) && (user.password != undefined))
+        {
+            const uRef = db.collection("users").doc(user.email);
+            const response = await uRef.get();
+            const uData = response.data();
+            // console.log(uData);
+
+            if((uData.email == user.email) && (uData.password == user.password))
+            {
+                uRef.delete();
+                res.redirect("/");
+            }
+            else
+            {
+                res.render("delete");
+            }
+        }
+        else
+        {
+            res.render("delete");
+        }
+
+    }
+    catch(e){
+        console.log("error from /signin --> " + e);
+        res.render("delete");
+    }
 })
 
 
 
 
 app.get("/showall", (req, res) => {
-    res.redirect("/");
+    
+
+
 })
 
 
