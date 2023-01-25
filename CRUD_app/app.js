@@ -1,15 +1,6 @@
 const express = require ("express");
 const bodyParser =  require ("body-parser");
-const { db } = require ("./db_config");
-
-// const admin = require("firebase-admin");
-// const serviceAccount = require("./service_key.json");
-
-// admin.initializeApp({
-//     credential: admin.credential.cert(serviceAccount)
-// })
-
-// const db = admin.firestore();
+const db = require ("./db_config");
 
 
 
@@ -32,7 +23,35 @@ app.get("/", (req, res) => {
 app.get("/signin", (req, res) => {
     res.render("signin");
 })
-app.post("/signin", (req, res) => {
+app.post("/signin", async (req, res) => {
+    let u_data = req.body;
+    const user = {
+        email: u_data.inputEmail,
+        password: u_data.inputPassword,
+    };
+
+    try{
+
+        if((user.email != undefined) && user.password != undefined)
+        {
+            const uData = (await db.collection("user").doc(user.email).get()).data();
+            if((uData.email == user.email) && (uData.password == user.password))
+            {
+                res.render("user_data", {uData: uData});
+            }
+            else
+            {
+                res.redirect("/")
+            }
+        }
+
+    }
+    catch(e){
+        console.log("error from /signin --> " + e);
+    }
+
+
+
     res.render("signin");
 })
 
@@ -41,8 +60,33 @@ app.post("/signin", (req, res) => {
 app.get("/signup", (req, res) => {
     res.render("signup");
 })
-app.post("/signup", (req, res) => {
-    res.render("signup");
+app.post("/signup", async (req, res) => {
+    let u_data = req.body;
+    const user = {
+        username: u_data.username,
+        email: u_data.inputEmail,
+        password: u_data.inputPassword,
+        mobile: u_data.mobileNumber,
+        gender: u_data.gender,
+        nickname: u_data.nickname
+    };
+
+    if(user.email == undefined)
+    {
+        console.log("email is not provided");
+        res.render("signup");
+    }
+
+    try{
+        // console.log(user);
+        const response = await db.collection("users").doc(user.email).set(user);
+        console.log(response);
+    }
+    catch (e){
+        console.log("error form /signin --> " + e);
+    }
+
+    res.redirect("/");
 })
 
 
@@ -69,6 +113,8 @@ app.post("/delete", (req, res) => {
 app.get("/showall", (req, res) => {
     res.redirect("/");
 })
+
+
 
 
 
