@@ -4,7 +4,7 @@
     text-align: center;
 }
 
-#mainframe{
+.mainframe{
     border: 1px solid gray;
     box-shadow: 3px 7px 5px 7px gray;
     margin: 0 auto;
@@ -27,3 +27,5 @@ input{
     height: 50px;
     width: 50px;
 }
+
+

@@ -24,17 +24,21 @@ app.get("/signin", (req, res) => {
     res.render("signin");
 })
 app.post("/signin", async (req, res) => {
-    let u_data = req.body;
     const user = {
-        email: u_data.inputEmail,
-        password: u_data.inputPassword,
+        email: req.body.inputEmail,
+        password: req.body.inputPassword,
     };
+    // console.log(user);
 
     try{
 
-        if((user.email != undefined) && user.password != undefined)
+        if((user.email != undefined) && (user.password != undefined))
         {
-            const uData = (await db.collection("user").doc(user.email).get()).data();
+            const uRef = db.collection("users").doc(user.email);
+            const response = await uRef.get();
+            const uData = response.data();
+            // console.log(uData);
+
             if((uData.email == user.email) && (uData.password == user.password))
             {
                 res.render("user_data", {uData: uData});
@@ -44,15 +48,16 @@ app.post("/signin", async (req, res) => {
                 res.redirect("/")
             }
         }
+        else
+        {
+            res.render("signin");
+        }
 
     }
     catch(e){
         console.log("error from /signin --> " + e);
+        res.render("signin");
     }
-
-
-
-    res.render("signin");
 })
 
 
