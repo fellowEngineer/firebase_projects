@@ -1,11 +1,11 @@
 <%- include("layouts/header") -%> 
 
 <section class="mainframe">
-    <form action="/signup" method="post">
+    <form action="/update" method="post">
 
         <div class="mb-3 t_left">
             <label for="username" class="form-label">Username</label> <br>
-            <input type="text" name="username" class="form-control" id="username" autocomplete="off" placeholder="Robert Downy jn.">
+            <input type="text" name="username" class="form-control" id="username" autocomplete="off" placeholder="Robert Downy jn." required>
         </div>
 
         <div class="mb-3 t_left">
@@ -40,7 +40,7 @@
             <input type="text" name="nickname" class="form-control" id="nickname" placeholder="King.">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </section>
 
