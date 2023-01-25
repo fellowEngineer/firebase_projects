@@ -62,6 +62,7 @@ app.get("/signin", (req, res) => {
 
 
 
+
 app.get("/signup", (req, res) => {
     res.render("signup");
 }).post("/signup", async (req, res) => {
@@ -188,12 +189,25 @@ app.get("/delete", (req, res) => {
 
 
 
-app.get("/showall", (req, res) => {
+app.get("/showall", async (req, res) => {
     
-
-
+    try{
+        const userRef = await db.collection("users").get();
+        const uData = [];
+        userRef.forEach(e => {
+            uData.push(e.data());
+        })
+        console.log(uData);
+        res.render("showall", {uData: uData});
+    }
+    catch(e){
+        console.log("error from /showall --> " + e);
+        res.redirect("/");
+    }
 })
-
+{/* <li class="nav-item">
+    <a class="nav-link" href="/showall">showall</a>
+</li> */}
 
 
 
