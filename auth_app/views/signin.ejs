@@ -1,0 +1,25 @@
+<%- include("layouts/header") -%> 
+
+<section class="mainframe">
+    <form action="/signin" method="post">
+
+        <div class="mb-3 t_left">
+            <label for="inputEmail1" class="form-label t_left">Email address</label>
+            <input type="email" name="inputEmail" class="form-control" id="inputEmail" aria-describedby="emailHelp" autocomplete="off" placeholder="example@example.com" required>
+            <div id="emailHelp" class="form-text t_left">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3 t_left">
+            <label for="inputPassword" class="form-label t_left">Password</label>
+            <input type="password" name="inputPassword" class="form-control" id="inputPassword" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+</section>
+
+
+    
+
+<%- include("layouts/footer") -%> 

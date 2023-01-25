@@ -1,0 +1,46 @@
+<%- include("layouts/header") -%> 
+
+<h2> Account Infomation </h2>
+<% uData.forEach(e => { %>
+    <div class="mainframe">
+
+        <div class="t_left">
+    
+            <h5> Username : 
+                <span>
+                    <%= e.username %>
+                </span> 
+            </h5> 
+            <h5> Email : 
+                <span>
+                    <%= e.email %>
+                </span> 
+            </h5> 
+            <h5> Password : 
+                <span>
+                    <%= e.password %>
+                </span> 
+            </h5> 
+            <h5> Mobile : 
+                <span>
+                    <%= e.mobile %>
+                </span> 
+            </h5> 
+            <h5> Gender : 
+                <span>
+                    <%= e.gender %>
+                </span>
+            </h5> 
+            <h5> Nickname : 
+                <span>
+                    <%= e.nickname %>
+                </span> 
+            </h5> 
+    
+        </div>
+        
+    </div>
+<% }) %> 
+    
+
+<%- include("layouts/footer") -%> 
