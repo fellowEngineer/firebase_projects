@@ -1,4 +1,29 @@
 *{
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+
+#mainframe{
+    border: 1px solid gray;
+    box-shadow: 3px 7px 5px 7px gray;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 10px 15px;
+    width: 30%;
+}
+
+input{
+    width: auto;
+}
+
+.t_left{
+    text-align: left;
+}
+
+#iconimg{
+    border-radius: 5%;
+    display: flex;
+    height: 50px;
+    width: 50px;
 }
