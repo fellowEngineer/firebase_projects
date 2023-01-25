@@ -1,13 +1,22 @@
-import { express } from "express";
-import { bodyParser } from "body-parser";
-import { db } from "./db_config";
+const express = require ("express");
+const bodyParser =  require ("body-parser");
+const { db } = require ("./db_config");
+
+// const admin = require("firebase-admin");
+// const serviceAccount = require("./service_key.json");
+
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount)
+// })
+
+// const db = admin.firestore();
 
 
 
 const app = express();
 
 app.set("view engine", "ejs");
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
@@ -52,6 +61,13 @@ app.get("/delete", (req, res) => {
 })
 app.post("/delete", (req, res) => {
     res.render("delete");
+})
+
+
+
+
+app.get("/showall", (req, res) => {
+    res.redirect("/");
 })
 
 

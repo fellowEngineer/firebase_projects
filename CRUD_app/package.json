@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
   "author": "fellowengineer",
   "license": "MIT",
   "dependencies": {
@@ -14,4 +15,5 @@
     "express": "^4.18.2",
     "firebase-admin": "^11.5.0"
   }
+
 }
