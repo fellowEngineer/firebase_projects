@@ -1,0 +1,11 @@
+#dependency 
+node_modules
+
+# enviormental files
+.env
+
+#api keys
+service_key.json
+
+#Optional npm chach directory
+.npm
