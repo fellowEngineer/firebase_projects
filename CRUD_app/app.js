@@ -23,8 +23,32 @@ app.get("/", (req, res) => {
 app.get("/signin", (req, res) => {
     res.render("signin");
 })
-app.post("/signin", (req, res) => {
-    
+app.post("/signin", async (req, res) => {
+    let u_data = req.body;
+    const user = {
+        email: u_data.inputEmail,
+        password: u_data.inputPassword,
+    };
+
+    try{
+
+        if((user.email != undefined) && user.password != undefined)
+        {
+            const uData = (await db.collection("user").doc(user.email).get()).data();
+            if((uData.email == user.email) && (uData.password == user.password))
+            {
+                res.render("user_data", {uData: uData});
+            }
+            else
+            {
+                res.redirect("/")
+            }
+        }
+
+    }
+    catch(e){
+        console.log("error from /signin --> " + e);
+    }
 
 
 
