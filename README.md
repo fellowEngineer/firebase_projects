@@ -1,9 +1,9 @@
 # firebase_projects
 
 A Collection of projects implements over firebse and Node used for backend. 
-    - [CRUD_app](https://github.com/fellowEngineer/firebase_projects/tree/main/CRUD_app) can do **CRUD** operations on firestore.
-    - [auth_app](https://github.com/fellowEngineer/firebase_projects/tree/main/auth_app) will show you how Password authentication,
-      Google/facebook/github or simple OAuth2.0 authentication works...
+- [CRUD_app](https://github.com/fellowEngineer/firebase_projects/tree/main/CRUD_app) can do **CRUD** operations on firestore.
+- [auth_app](https://github.com/fellowEngineer/firebase_projects/tree/main/auth_app) will show you how Password authentication,
+    Google/facebook/github or simple OAuth2.0 authentication works...
     <!-- - next app ... -->
 
 
@@ -34,7 +34,7 @@ A Collection of projects implements over firebse and Node used for backend.
 **3.** Clone the forked repository 
 
 ``` 
-    git clone https://github.com/<your-github-username>/firebase_projects 
+git clone https://github.com/<your-github-username>/firebase_projects 
 ```
 
 **4.** Navigate to the project directory
@@ -112,3 +112,7 @@ git push -u origin <your_branch_name>
 
 Congratulations! 🎉 you've made your contribution to firebase_projects.
 Happy Coding! 
+
+
+# Issues And PRs
+Before making pull requests please look at our contributing guidelines (coming soon). You can start working on the issue which are mentioned in issues section. Just drop a comment before working on the issue. Thank you!
