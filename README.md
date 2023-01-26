@@ -70,7 +70,7 @@ git checkout -b <your_branch_name>
 **9.** Run to following commonds to install required  dependencies 
 
  ``` 
-npm install . 
+npm install
 ```
 
 ``` 
