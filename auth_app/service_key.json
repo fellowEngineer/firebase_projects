@@ -1,0 +1,41 @@
+{   
+    "info": "to run your app, you need to go firebase",
+
+    "Step 1": "sign in with your google account",
+    "Step 2": "Click: Go to Console",
+    "Step 3": "Click: Add Project",
+    "Step 4": "Enter Your project name",
+    "Step 5": "Click: continue",
+    "Step 6": "Again Click: continue",
+    "Step 7": "Now your browser will show, 'Creating your project… Please wait…', wait for a few seconds..",
+    "Step 8": "Once it said: 'Your new project is ready', Click: continue",
+    "Step 9": "Click: The Web Icon, look something like: '</>' ...",
+    "Step 10": "Register app name: Type your new web app name, and hit continue",
+    "Step 11": "wait for few second, then Click: 'continue to the console' ..",
+    "Step 12": "Now go to 'Project settings' ..",
+    "Step 13": "go to 'Service Account' ...",
+    "Step 14": "Click: 'Generate new private key' ...",
+    "Step 15": "Click: 'Generate Key', this will download a json file",
+    "Step 16": "now, open that json file, copy all the content of that file and pase down here",
+    "Step 17": "Must Delete All these Steps,",
+    "HINT": "Downloaded key will look something like",
+    
+
+    "example key": {
+        "type": "service_account",
+        "project_id": "test-project_id-56dbd",
+        "private_key_id": "lkfjaslfjasofiafjasldffas64fas65g4",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nalfskja;lskdfjaslkdfjaslfkjas\n-----END PRIVATE KEY-----\n",
+        "client_email": "some fancy email",
+        "client_id": "5464646498",
+        "auth_uri": "link",
+        "token_uri": "link",
+        "auth_provider_x509_cert_url": "link",
+        "client_x509_cert_url": "link"
+    },
+
+
+    "massage": "Happy Coding.."
+}  
+
+    
