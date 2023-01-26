@@ -69,8 +69,13 @@ git checkout -b <your_branch_name>
 
 **9.** Run to following commonds to install required  dependencies 
 
-    1. ``` npm i ``` or ``` npm install ```
-    2. ``` nodemon app.js ``` or ``` node app.js ``` starts the server up .
+ ``` 
+npm install
+```
+
+``` 
+nodemon app.js 
+```
 
 **10.** Open [http://localhost:4000](http://localhost:4000) or [http://0.0.0.0:4000](http://0.0.0.0:4000) to your browser.
 
@@ -89,7 +94,7 @@ git checkout -b <your_branch_name>
 **4.** Stage your changes and commit.
 
 ``` 
-git add . 
+git add
 ```
 
 ``` 
