@@ -30,11 +30,17 @@ A Collection of projects implements over firebse and Node used for backend.
 1. Fork [this](https://github.com/fellowEngineer/firebase_projects) repository.
 2. Star [this](https://github.com/fellowEngineer/firebase_projects) repository (Optional).
 3. Clone the forked repository 
-``` git clone https://github.com/<your-github-username>/firebase_projects ```
+``` 
+    git clone https://github.com/<your-github-username>/firebase_projects 
+```
 4. Navigate to the project directory
-``` cd firebase_projects ```
+```
+    cd firebase_projects
+```
 5. Create a new branch 
-``` git checkout -b <your_branch_name> ```
+```
+git checkout -b <your_branch_name>
+```
 6. Run to following commonds to install required  dependencies 
     1. ``` npm i ``` or ``` npm install ```
     2. ``` npm start ``` starts the server up .
@@ -46,9 +52,15 @@ A Collection of projects implements over firebse and Node used for backend.
 2. Do the relevent change you want ..
 3. Before stage your changes, make sure you are in the relavent branch
 4. Stage your changes and commit.
-``` git add . ```
-``` git commit -m "your_commit_massage" ```
+``` 
+git add . 
+```
+``` 
+git commit -m "your_commit_massage" 
+```
 5. Push your local commits to the remote repo.
-``` git push -u origin <your_branch_name> ```
+``` 
+git push -u origin <your_branch_name> 
+```
 6. Now, Head over to github and create a pull requert to main
 7. Congratulations! 🎉 you've made your contribution to firebase_projects.
