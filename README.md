@@ -20,7 +20,7 @@ A Collection of projects implements over firebse and Node used for backend.
     - EJS.
     - Body-Parser.
     - Filebase-admin.
-    - nodemon (Optional).
+    - nodemon.
 
 
 ## Getting Started 
@@ -70,7 +70,7 @@ git checkout -b <your_branch_name>
 **9.** Run to following commonds to install required  dependencies 
 
     1. ``` npm i ``` or ``` npm install ```
-    2. ``` npm start ``` starts the server up .
+    2. ``` nodemon app.js ``` or ``` node app.js ``` starts the server up .
 
 **10.** Open [http://localhost:4000](http://localhost:4000) or [http://0.0.0.0:4000](http://0.0.0.0:4000) to your browser.
 
